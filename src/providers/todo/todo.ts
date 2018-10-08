@@ -7,6 +7,8 @@ export class TodoProvider {
   lastId: number = 0;
 
   todos: Todo[] = [];
+  numberOfDos: number = 0;
+
 
   constructor() { }
 
@@ -17,6 +19,7 @@ export class TodoProvider {
     }
 
     this.todos.push(todo);
+    this.numberOfDos++;
     return this;
   }
 
@@ -54,6 +57,12 @@ export class TodoProvider {
     let updatedTodo = this.updateTodoById(todo.id, {
       complete: !todo.complete
     });
+    if (todo.complete === true) {
+      this.numberOfDos--;
+    }
+    if (todo.complete === false) {
+      this.numberOfDos++;
+    }
     return updatedTodo;
   }
 

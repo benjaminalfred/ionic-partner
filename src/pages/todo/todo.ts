@@ -12,8 +12,9 @@ import { TodoProvider } from '../../providers/todo/todo';
 export class TodoPage {
 
   newTodo: Todo = new Todo();
+  numberOfDos: number = 0;
 
-  constructor(private _todoServe: TodoProvider) {
+  constructor(private _todoPro: TodoProvider) {
 
   }
 
@@ -22,20 +23,24 @@ export class TodoPage {
       return;
     }
 
-    this._todoServe.addTodo(this.newTodo);
+    this._todoPro.addTodo(this.newTodo);
     this.newTodo = new Todo();
+    this.numberOfDos++;
   }
 
   toggleTodoComplete(todo) {
-    this._todoServe.toggleTodoComplete(todo);
+    this._todoPro.toggleTodoComplete(todo);
   }
 
   removeTodo(todo) {
-    this._todoServe.deleteTodoById(todo.id);
+    this._todoPro.deleteTodoById(todo.id);
+    if (todo.complete === false) {
+      this._todoPro.numberOfDos--;
+    }
   }
 
   get todos() {
-    return this._todoServe.getAllTodos();
+    return this._todoPro.getAllTodos();
   }
 
 }

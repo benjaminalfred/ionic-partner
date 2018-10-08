@@ -7,7 +7,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>todo</ion-title>
+    <ion-title>To Do List</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -24,7 +24,7 @@
       <ul class="todo-list">
         <li *ngFor="let todo of todos" [class.completed]="todo.complete">
           <div class="view">
-            <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo)" [checked]="todo.complete">
+            <input class="toggle" type="checkbox" (click)="toggleTodoComplete(todo);" [checked]="todo.complete">
             <label>{{todo.title}}</label>
             <button class="destroy" (click)="removeTodo(todo)"></button>
           </div>
@@ -33,7 +33,7 @@
     </section>
     <footer class="footer" *ngIf="todos.length > 0">
       <span class="todo-count">
-        <strong>{{todos.length}}</strong> {{todos.length == 1 ? 'item' : 'items'}} left</span>
+        <strong>{{_todoPro.numberOfDos}}</strong> {{todos.length == 1 ? 'item' : 'items'}} left</span>
     </footer>
   </section>
   
