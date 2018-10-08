@@ -8,6 +8,7 @@ export class TodoProvider {
 
   todos: Todo[] = [];
   numberOfDos: number = 0;
+  loggedIn: boolean = false;
 
 
   constructor() { }
