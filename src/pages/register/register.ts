@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
+import { TodoPage } from '../todo/todo';
 
 @Component({
   selector: 'page-register',
@@ -11,4 +12,7 @@ export class RegisterPage {
 
   }
 
+  goHome() {
+    this.navCtrl.push(TodoPage)
+  }
 }
