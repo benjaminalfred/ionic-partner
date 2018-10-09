@@ -7,12 +7,19 @@ import { TodoPage } from '../todo/todo';
   templateUrl: 'register.html'
 })
 export class RegisterPage {
+  user: any = {
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: ""
+  };
 
   constructor(public navCtrl: NavController) {
 
   }
 
-  goHome() {
+  register() {
     this.navCtrl.push(TodoPage)
   }
+
 }

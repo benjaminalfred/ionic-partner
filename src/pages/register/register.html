@@ -7,27 +7,24 @@
 </ion-header>
 
 <ion-content padding>
-  <div class="login-wrapper">
-    <form class="login">
-      <label class="title">
-          <h3 class="welcome">Welcome to</h3>
-          Dummy Register Page
-      </label>
-      <section class="form-block">
-        <div class="form-group">
-          <label for="formFields_1">Email</label>
-          <input type="text" id="formFields_1" placeholder="Email" size="35">
-        </div>
-        <div class="form-group">
-          <label for="formFields_7">Password</label>
-          <input type="password" id="formFields_7" placeholder="Password">
-        </div>
-        <div class="form-group">
-          <label for="formFields_11">Date of Birth</label>
-          <input type="date" id="formFields_11" size="35">
-        </div>
-        <button type="submit" class="btn btn-primary" (click)="goHome()">Register</button>
-      </section>
-    </form>
-  </div>
+  <ion-list>
+  <ion-item>
+      <ion-input type="text" placeholder="First Name" [(ngModel)]="user.firstName"></ion-input>
+      </ion-item>
+
+  <ion-item>
+      <ion-input type="text" placeholder="Last Name" [(ngModel)]="user.lastName"></ion-input>  
+    </ion-item>
+
+  <ion-item>
+      <ion-input type="text" placeholder="Email" [(ngModel)]="user.email"></ion-input>   
+     </ion-item>
+
+    <ion-item>
+        <ion-input type="password" placeholder="Password"[(ngModel)]="user.password" ></ion-input>
+      </ion-item>
+      
+</ion-list>
+<button ion-button>Sign Up</button>
+
 </ion-content>

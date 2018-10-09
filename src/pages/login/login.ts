@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { TodoPage } from '../todo/todo';
+import { RegisterPage } from '../register/register';
 
 
 @Component({
@@ -8,6 +9,11 @@ import { TodoPage } from '../todo/todo';
   templateUrl: 'login.html'
 })
 export class LoginPage {
+  user: any = {
+    email: "",
+    password: ""
+
+  };
 
   constructor(public navCtrl: NavController) {
 
@@ -15,8 +21,11 @@ export class LoginPage {
   ngOnInit() {
   }
 
-  goHome() {
+  login() {
     this.navCtrl.push(TodoPage)
+  }
+  toRegister() {
+    this.navCtrl.push(RegisterPage);
   }
 
 
